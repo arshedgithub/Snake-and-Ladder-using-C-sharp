@@ -33,11 +33,21 @@ namespace snakeAndLadderGame
         };
 
 
+
+
         static void Main(string[] args) 
         {
-            Console.WriteLine("Hello World!");
-             
-            
+            int player_1_position = 0;
+            int player_2_position = 0;
+
+            Console.WriteLine("Enter First Player Name : ");
+            string player_1 = Console.ReadLine();
+            Console.WriteLine("Enter Second Player Name : ");
+            string player_2= Console.ReadLine();
+
+            bool turnOfFirstPlayer = true;
+
+
         }
 
         // function for generating number between 1 to 6 using Random class
