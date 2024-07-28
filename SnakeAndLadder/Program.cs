@@ -40,14 +40,50 @@ namespace snakeAndLadderGame
             int player_1_position = 0;
             int player_2_position = 0;
 
-            Console.WriteLine("Enter First Player Name : ");
+            Console.Write("Enter the player 1 name : ");
             string player_1 = Console.ReadLine();
-            Console.WriteLine("Enter Second Player Name : ");
+            Console.Write("Enter the player 2 name : ");
             string player_2= Console.ReadLine();
+            Console.WriteLine();
 
             bool turnOfFirstPlayer = true;
 
+            while (player_1_position < 100 && player_2_position < 100)
+            {
+                if (turnOfFirstPlayer)
+                {
+                    // turn of first palyer
+                    Console.Write($"{player_1}, Please roll the dice : ");
+                    if (Console.ReadLine() == "r")
+                    {
+                        int diceValue = rollingDice();
+                        Console.WriteLine("Dice Value : " + diceValue);
+                        player_1_position += diceValue;
+                        turnOfFirstPlayer = !turnOfFirstPlayer;
+                        Console.WriteLine(player_1 + " Your new position is " + player_1_position);
+                    } else
+                    {
+                        Console.WriteLine("Press r for roll dice!");
+                    }
+                } else
+                // turn of second palyer
 
+                {
+                    Console.Write($"{player_2}, Please roll the dice : ");
+                    if (Console.ReadLine() == "r")
+                    {
+                        int diceValue = rollingDice();
+                        Console.WriteLine("Dice Value : " + diceValue);
+                        player_2_position += diceValue;
+                        turnOfFirstPlayer = !turnOfFirstPlayer;
+                        Console.WriteLine(player_2 + " Your new position is " + player_2_position);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Press r for roll dice!");
+                    }
+                }
+            }
         }
 
         // function for generating number between 1 to 6 using Random class
